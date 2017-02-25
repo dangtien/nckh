@@ -1,0 +1,22 @@
+.clear-pd-right{
+	padding-right: 0px;
+}
+.clear-pd-left{
+	padding-left: 0px;
+}
+.clear-pd{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.select2-selection--single{
+	border-radius: 0px !important;
+	border: 1px solid rgba(170, 170, 170, 0.57) !important;
+	height: 33px !important;	
+}
+.tb-head{
+	background-color: rgba(128, 128, 128, 0.35);
+}
+.btn-edit{
+	float: right;
+	margin-right: 20px;
+}

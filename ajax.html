@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hello</title>
+</head>
+<body>
+<table >
+	<thead>
+		<th>Họ Tên</th>
+	    <th>Tên đăng nhập</th>
+	    <th>Email</th>
+	    <th>Địa chỉ</th>
+	    <th style="width: 30px;">Quyền</th>
+	</thead>
+	<tbody id="tbody">
+		<tr>
+					<td><input type="checkbox" value="" ></td>
+                    <td><a href="#"></a></td>
+                    <td></td>
+                    <td><a href="#"></a></td>
+                    <td></td>
+                    <td></td>
+        </tr>
+	</tbody>
+</table>
+<button onclick="loadAjax()" >CLICK</button>
+<script type="text/javascript">
+	function loadAjax(){
+		var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		      var  json = this.responseText;
+		      var obj =JSON.parse(json);
+		        var i;
+		        console.log(obj.length);
+		        var data="";
+		        for(i=0;i<obj.length;i++){
+		        	 data+="<tr><td><input type='checkbox' value="+obj[i]["taikhoan_id"]+"></td><td><a href='#'>"+obj[i]["hodem"]+"</a></td><td>"+obj[i]["diachi"]+"</td><td><a href='#'>"+obj[i]["taikhoan"]+"</a></td><td>"+obj[i]["ten"]+"</td><td>"+obj[i]["phanquyen"]+"</td></tr>" ;
+		        }
+		        document.getElementById('tbody').innerHTML=data;
+		    }
+		};
+		xmlhttp.open("GET", "test.php", true);
+		xmlhttp.send();
+	}
+</script>
+</body>
+</html>
